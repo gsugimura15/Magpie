@@ -42,6 +42,11 @@ public class Magpie
   {
    response = "Tell me more about your family.";
   }
+  else if (statement.indexOf("Mr. Kiang") >= 0
+    || statement.indexOf("Mr. Landgraff") >= 0)
+  {
+   response = "He's probably the best looking teacher at Punahou";
+  }
   else
   {
    response = getRandomResponse();
