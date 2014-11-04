@@ -45,12 +45,12 @@ public class Magpie
   else if (statement.indexOf("Mr. Kiang") >= 0 // The statement for the computer to recognize that someone is talking about Mr. Kiang or Mr. Landgraf
     || statement.indexOf("Mr. Landgraf") >= 0)
   {
-   response = "He's probably the best looking teacher at Punahou"; // The response statement
+   response = "He's probably the best looking teacher at Punahou"; // The response statement about our teachers
   }
   else if (statement.indexOf("Dog") >= 0 // The statement for the computer to recognize that someone is talking about a dog or a cat
     || statement.indexOf("Cat") >= 0)
   {
-   response = "Pets are great! Personally I'm a dog person but tell me more about your pets."; // The response statement
+   response = "Pets are great! Personally I'm a dog person but tell me more about your pets."; // The response statement about pets
   }
   else
   {
@@ -85,6 +85,14 @@ public class Magpie
   else if (whichResponse == 3)
   {
    response = "You don't say.";
+  }
+  else if (whichResponse == 4) // New response
+  {
+    response = "Really now?";
+  }
+  else if (whichResponse == 5) // New response
+  {
+    response = "I see...";
   }
 
   return response;
