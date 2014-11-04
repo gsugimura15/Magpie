@@ -42,10 +42,10 @@ public class Magpie
   {
    response = "Tell me more about your family.";
   }
-  else if (statement.indexOf("Mr. Kiang") >= 0
-    || statement.indexOf("Mr. Landgraff") >= 0)
+  else if (statement.indexOf("Mr. Kiang") >= 0 // The statement for the computer to recognize that someone is talking about Mr. Kiang or Mr. Landgraf
+    || statement.indexOf("Mr. Landgraf") >= 0)
   {
-   response = "He's probably the best looking teacher at Punahou";
+   response = "He's probably the best looking teacher at Punahou"; // The response statement
   }
   else
   {
