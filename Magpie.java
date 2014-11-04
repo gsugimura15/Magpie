@@ -47,6 +47,11 @@ public class Magpie
   {
    response = "He's probably the best looking teacher at Punahou"; // The response statement
   }
+  else if (statement.indexOf("Dog") >= 0 // The statement for the computer to recognize that someone is talking about a dog or a cat
+    || statement.indexOf("Cat") >= 0)
+  {
+   response = "Pets are great! Personally I'm a dog person but tell me more about your pets."; // The response statement
+  }
   else
   {
    response = getRandomResponse();
