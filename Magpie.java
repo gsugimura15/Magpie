@@ -56,11 +56,22 @@ public class Magpie
   {
    response = "Pets are great! Personally I'm a dog person but tell me more about your pets."; // The response statement about pets
   }
+  else if (statement.indexOf("Food") >= 0) // New keyword and answer about food
+  {
+   response = "Speaking of food, I'm really hungry!"; 
+  }
+  else if (statement.indexOf("Music") >= 0) // New keyword and answer about music
+  {
+   response = "I love music, who's your favorite artist right now?"; 
+  }
+  else if (statement.indexOf("Minecraft") >= 0) // New keyword and answer about minecraft
+  {
+   response = "I haven't played that in awhile...I bought it real cheap during Alpha and I used to play it a lot but not so much anymore"; 
+  }
   else
   {
    response = getRandomResponse();
   }
-  
   return response;
  }
 
