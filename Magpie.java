@@ -114,3 +114,8 @@ public class Magpie
   return response;
  }
 }
+// The responses are prioritized in order of the coding. So for instance, no is first, family is second, teachers are third, and so on. So when typing out a sentence, no matter what the order of the words
+// ... in the sentences, what will come out first is what has been coding first. 
+
+// What happens what a keyword is in another word is that the code just searches for certain letters in a certain order. So for example "no" is in "kNOwledge" so the code goes with the "no" statement
+// And then it's exactly the same as above. The code prioritizes whatever has been coded first. 
