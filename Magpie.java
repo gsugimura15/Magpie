@@ -35,6 +35,10 @@ public class Magpie
   {
    response = "Why so negative?";
   }
+  else if (statement.trim().length() == 0) // If the user doesn't say anything, this trims off the spaces and asks the user to say something
+    {
+      response = "Uhh...you gonna say something?";
+    }
   else if (statement.indexOf("mother") >= 0
     || statement.indexOf("father") >= 0
     || statement.indexOf("sister") >= 0
@@ -56,6 +60,7 @@ public class Magpie
   {
    response = getRandomResponse();
   }
+  
   return response;
  }
 
@@ -65,7 +70,7 @@ public class Magpie
   */
  private String getRandomResponse()
  {
-  final int NUMBER_OF_RESPONSES = 4;
+  final int NUMBER_OF_RESPONSES = 6;
   double r = Math.random();
   int whichResponse = (int)(r * NUMBER_OF_RESPONSES);
   String response = "";
