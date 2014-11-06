@@ -47,12 +47,12 @@ public class Magpie
    response = "Tell me more about your family.";
   }
   else if (findKeyword(statement,"Mr. Kiang") >= 0 // The statement for the computer to recognize that someone is talking about Mr. Kiang or Mr. Landgraf
-    || statement.indexOf("Mr. Landgraf") >= 0)
+    || findKeyword(statement,"Mr. Landgraf") >= 0)
   {
    response = "He's probably the best looking teacher at Punahou"; // The response statement about our teachers
   }
   else if (findKeyword(statement,"Dog") >= 0 // The statement for the computer to recognize that someone is talking about a dog or a cat
-    || statement.indexOf("Cat") >= 0)
+    || findKeyword(statement,"Cat") >= 0)
   {
    response = "Pets are great! Personally I'm a dog person but tell me more about your pets."; // The response statement about pets
   }
