@@ -20,7 +20,8 @@ public class Magpie
  {
   return "Hello, let's talk.";
  }
- 
+   String lastPhrase = "";// Stores last phrase inputted
+   
  /**
   * Gives a response to a user statement
   * 
@@ -68,10 +69,25 @@ public class Magpie
   {
    response = "I haven't played that in awhile...I bought it real cheap during Alpha and I used to play it a lot but not so much anymore"; 
   }
+   else if (findKeyword(statement, "I want", 0) >= 0)// If input has "I want" in it, uses transform method to give reply
+  {
+   response = wantStatement(statement);
+  }  
+   else
+   {
+   int psn = findKeyword(statement, "I", 0);// If input has I something you in it, uses transform method to give reply
+
+   if (psn >= 0// If position >=0 and the statement contains you
+     && findKeyword(statement, "you", psn) >= 0)
+   {
+    response = meStatement(statement);
+   }  
   else
   {
    response = getRandomResponse();
   }
+   }
+  lastPhrase = statement;
   return response;
  }
 
@@ -147,6 +163,40 @@ public class Magpie
 
   return -1;
  }
+  
+  private String wantStatement(String statement)
+ {
+  //  Remove the final period, if there is one
+  statement = statement.trim();
+  String lastChar = statement.substring(statement
+    .length() - 1);
+  if (lastChar.equals("."))
+  {
+   statement = statement.substring(0, statement
+     .length() - 1);
+  }
+  int psn = findKeyword (statement, "I want", 0);// Looks for "I want"
+  String restOfStatement = statement.substring(psn + 7).trim();// The rest of the statement is statement - the first 7 characters
+  return "Would you really be happy if you had " + restOfStatement + "?";// Returns the rest 
+ }
+   private String meStatement(String statement)
+ {
+  //  Remove the final period, if there is one
+  statement = statement.trim();
+  String lastChar = statement.substring(statement
+    .length() - 1);
+  if (lastChar.equals("."))
+  {
+   statement = statement.substring(0, statement
+     .length() - 1);
+  }
+  
+  int psnOfI = findKeyword (statement, "I", 0);// Looks for position of I
+  int psnOfMe = findKeyword (statement, "you", psnOfI + 1);// Looks for the position of you only if it is past I
+  
+  String restOfStatement = statement.substring(psnOfI + 1, psnOfMe).trim();// Trims everything between
+  return "Why do you " + restOfStatement + " me?";// Returns statement
+ }
 
  /**
   * Search for one word in phrase. The search is not case
@@ -209,5 +259,6 @@ public class Magpie
 
 // What happens what a keyword is in another word is that the code just searches for certain letters in a certain order. So for example "no" is in "kNOwledge" so the code goes with the "no" statement
 // And then it's exactly the same as above. The code prioritizes whatever has been coded first. 
+
 
  
