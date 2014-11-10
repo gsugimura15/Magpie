@@ -198,6 +198,10 @@ public class Magpie
   return "Why do you " + restOfStatement + " me?";// Returns statement
  }
 
+// A time when this might not work well is if you said something like "I want you." The result doesn't really make sense. Maybe put an exception into the code if something like 
+// this were to pop up. 
+   
+   
  /**
   * Search for one word in phrase. The search is not case
   * sensitive. This method will check that the given goal
