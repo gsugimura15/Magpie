@@ -73,7 +73,15 @@ public class Magpie
     String beginningOfStatement = statement.substring(0, psn); // Gets beginning of statement
     String restOfStatement = statement.substring(psn + 4).trim(); // Gets end of statement
     response = "Why are " + beginningOfStatement + restOfStatement + "?"; //Combines for a response
-  }   
+  }
+  
+  // Past tense -ed verbs
+  // Single vowel plus consonnt = add the last consonant and then -ed...opposite = drop redundant consonant and -ed
+  // -lled verbs drop -led
+  // rest drop -ed
+  // Except the infinitives that end in "e" then I believe you just drop the -d from -ed. 
+  
+  
   else if (findKeyword(statement,"mother") >= 0
     || findKeyword(statement,"father") >= 0
     || findKeyword(statement,"sister") >= 0
