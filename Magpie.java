@@ -42,6 +42,8 @@ public class Magpie
     {
       response = "Uhh...you gonna say something?";
     }
+  
+  // Takes "is" moves it to the front and adds "why" to make it a question. 
   else if (findKeyword(statement, "is", 0) >= 0) // Looks for "is"
     {
       int psn = findKeyword(statement, "is", 0);// Takes "is"
@@ -49,18 +51,22 @@ public class Magpie
       String beginningOfStatement = statement.substring(0, psn);// Gets beginning of statement
       response = "Why is " + beginningOfStatement + restOfStatement + "?"; // Combines for a response
     }
+  
+ // Takes "you are" and changes it to "why am I" and moves it to the front to make it a question. 
   else if (findKeyword(statement, "you are", 0) >=0) // Looks for "you are"
   {
     int psn = findKeyword(statement, "you are",0); // Takes "you are"
     String restOfStatement = statement.substring(psn + 7).trim(); // Gets rest of statement
     response = "Why am I " + restOfStatement + "?"; // Combines for a response 
   }
+  // Takes "I am" and changes it to "why are you" and moves it to the front to make it a question. 
   else if (findKeyword(statement, "I am",0) >=0)
   {
     int psn = findKeyword(statement, "I am",0);
     String restOfStatement = statement.substring(psn + 5).trim();
     response = "Why are you " + restOfStatement + "?";
-  }         
+  }     
+  // Takes "are" and adds "why" and moves them to the front to make it a question. 
   else if (findKeyword(statement, "are", 0) >=0) // Looks for just "are" without the "you"
   {
     int psn = findKeyword(statement, "are",0); // Takes "are"
