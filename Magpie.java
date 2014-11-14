@@ -41,6 +41,19 @@ public class Magpie
     {
       response = "Uhh...you gonna say something?";
     }
+  else if (findKeyword(statement, "is", 0) >= 0) // Looks for "is"
+    {
+      int psn = findKeyword(statement, "is", 0);// Takes "is"
+      String restOfStatement = statement.substring(psn + 3).trim(); // Gets rest of statement
+      String beginningOfStatement = statement.substring(0, psn);// Gets beginning of statement
+      response = "Why is " + beginningOfStatement + restOfStatement + "?"; // Combines for a response
+    }
+  else if (findKeyword(statement, "you are", 0) >=0) // Looks for "you are"
+  {
+    int psn = findKeyword(statement, "you are",0); // Takes "you are"
+    String restOfStatement = statement.substring(psn + 7).trim(); // Gets rest of statement
+    response = "Why am I " + restOfStatement + "?"; // Combines for a response 
+  }
   else if (findKeyword(statement,"mother") >= 0
     || findKeyword(statement,"father") >= 0
     || findKeyword(statement,"sister") >= 0

@@ -10,6 +10,7 @@
  * @author Laurie White
  * @version April 2012
  */
+import java.util.Random; // Importing "random" for use later.
 public class Magpie
 {
  /**
@@ -223,41 +224,31 @@ public class Magpie
  
  
  
- private String getRandomResponse()
+  /**
+  * Pick a default response to use if nothing else fits.
+  * @return a non-committal string
+  */
+ private String getRandomResponse () // Replaced old method
  {
-  final int NUMBER_OF_RESPONSES = 6;
-  double r = Math.random();
-  int whichResponse = (int)(r * NUMBER_OF_RESPONSES);
-  String response = "";
-  
-  if (whichResponse == 0)
-  {
-   response = "Interesting, tell me more.";
-  }
-  else if (whichResponse == 1)
-  {
-   response = "Hmmm.";
-  }
-  else if (whichResponse == 2)
-  {
-   response = "Do you really think so?";
-  }
-  else if (whichResponse == 3)
-  {
-   response = "You don't say.";
-  }
-  else if (whichResponse == 4) // New response
-  {
-    response = "Really now?";
-  }
-  else if (whichResponse == 5) // New response
-  {
-    response = "I see...";
-  }
-
-  return response;
+  Random r = new Random (); // Uses "random" 
+  return randomResponses [r.nextInt(randomResponses.length)];
  }
+ 
+ private String [] randomResponses = {"Interesting, tell me more",
+   "Hmmm.",
+   "Do you really think so?",
+   "You don't say.",
+   "Dude, are you serious?",
+   "Come again?",
+   "I see...",
+   "Really?",
+   "SAY WHAT NOW?!",
+   "Can you repeat that?",
+   "I don't think I understand...",  // Responses
+ };
+ 
 }
+
 // The responses are prioritized in order of the coding. So for instance, no is first, family is second, teachers are third, and so on. So when typing out a sentence, no matter what the order of the words
 // ... in the sentences, what will come out first is what has been coding first. 
 
