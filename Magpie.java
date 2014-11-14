@@ -54,13 +54,19 @@ public class Magpie
     String restOfStatement = statement.substring(psn + 7).trim(); // Gets rest of statement
     response = "Why am I " + restOfStatement + "?"; // Combines for a response 
   }
+  else if (findKeyword(statement, "I am",0) >=0)
+  {
+    int psn = findKeyword(statement, "I am",0);
+    String restOfStatement = statement.substring(psn + 5).trim();
+    response = "Why are you " + restOfStatement + "?";
+  }         
   else if (findKeyword(statement, "are", 0) >=0) // Looks for just "are" without the "you"
   {
     int psn = findKeyword(statement, "are",0); // Takes "are"
     String beginningOfStatement = statement.substring(0, psn); // Gets beginning of statement
     String restOfStatement = statement.substring(psn + 4).trim(); // Gets end of statement
     response = "Why are " + beginningOfStatement + restOfStatement + "?"; //Combines for a response
-  }
+  }   
   else if (findKeyword(statement,"mother") >= 0
     || findKeyword(statement,"father") >= 0
     || findKeyword(statement,"sister") >= 0
